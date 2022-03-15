@@ -124,7 +124,7 @@ set(
 # Create object library
 # ----------------------------------------------
 add_library (qdldlobject OBJECT ${qdldl_src} ${qdldl_headers})
-target_include_directories(qdldlobject PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(qdldlobject PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 
 # Create Static Library
