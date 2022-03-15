@@ -144,6 +144,9 @@ if( QDLDL_BUILD_STATIC_LIB )
     target_include_directories(qdldlstatic
                                PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
                                       "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/qdldl>")
+    
+    # Alias target
+    add_library (QDLDL::QDLDL_STATIC ALIAS qdldlstatic)
 
     # Install Static Library
     # ----------------------------------------------
@@ -154,6 +157,7 @@ if( QDLDL_BUILD_STATIC_LIB )
             LIBRARY       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
             RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
 endif()
+
 
 # Install Headers
 # ----------------------------------------------
@@ -179,6 +183,10 @@ if( QDLDL_BUILD_SHARED_LIB )
     target_include_directories(qdldl
         PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/qdldl>")
+
+    # Alias target
+    add_library (QDLDL::QDLDL ALIAS qdldlshared)
+    add_library (QDLDL::QDLDL_SHARED ALIAS qdldlshared)
 
     # Install qdldl shared library
     install(TARGETS qdldl
