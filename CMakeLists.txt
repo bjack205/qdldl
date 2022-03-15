@@ -184,9 +184,9 @@ if( QDLDL_BUILD_SHARED_LIB )
         PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
         "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/qdldl>")
 
-    # Alias target
-    add_library (QDLDL::QDLDL ALIAS qdldlshared)
-    add_library (QDLDL::QDLDL_SHARED ALIAS qdldlshared)
+    # Alias targets
+    add_library (QDLDL::QDLDL ALIAS qdldl)
+    add_library (QDLDL::QDLDL_SHARED ALIAS qdldl)
 
     # Install qdldl shared library
     install(TARGETS qdldl
